@@ -174,8 +174,7 @@ private fun getDefaultEnabledSubtypes(): List<InputMethodSubtype> {
     if (systemSubtypes.isNotEmpty()) return systemSubtypes
     val subtypes = systemLocales.mapNotNull { locale ->
         val subtypesOfLocale = resourceSubtypesByLocale[locale]
-            // get best match
-            ?: LocaleUtils.getBestMatch(locale, resourceSubtypesByLocale.keys) {it}?.let { resourceSubtypesByLocale[it] }
+            ?: LocaleUtils.getBestMatch(locale, resourceSubtypesByLocale.keys) { it }?.let { resourceSubtypesByLocale[it] }
         subtypesOfLocale?.firstOrNull()
     }
     if (subtypes.isEmpty()) {
@@ -183,6 +182,11 @@ private fun getDefaultEnabledSubtypes(): List<InputMethodSubtype> {
         systemSubtypes.add(resourceSubtypesByLocale[Locale.US]!!.first())
     } else {
         systemSubtypes.addAll(subtypes)
+    }
+    // Add bn-BD:bengali_probhat as the default enabled subtype
+    val bnBdSubtype = resourceSubtypesByLocale[Locale("bn", "BD")]?.firstOrNull { SubtypeLocaleUtils.getKeyboardLayoutSetName(it) == "bengali_probhat" }
+    if (bnBdSubtype != null && bnBdSubtype !in systemSubtypes) {
+        systemSubtypes.add(bnBdSubtype)
     }
     return systemSubtypes
 }

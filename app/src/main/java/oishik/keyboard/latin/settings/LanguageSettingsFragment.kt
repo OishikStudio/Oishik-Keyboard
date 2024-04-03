@@ -67,7 +67,7 @@ class LanguageSettingsFragment : Fragment(R.layout.language_settings) {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = super.onCreateView(inflater, container, savedInstanceState) ?: return null
         systemOnlySwitch = view.findViewById(R.id.language_switch)
-        systemOnlySwitch.isChecked = sharedPreferences.getBoolean(Settings.PREF_USE_SYSTEM_LOCALES, true)
+        systemOnlySwitch.isChecked = sharedPreferences.getBoolean(Settings.PREF_USE_SYSTEM_LOCALES, false)
         systemOnlySwitch.setOnCheckedChangeListener { _, b ->
             sharedPreferences.edit { putBoolean(Settings.PREF_USE_SYSTEM_LOCALES, b) }
             enabledSubtypes.clear()
