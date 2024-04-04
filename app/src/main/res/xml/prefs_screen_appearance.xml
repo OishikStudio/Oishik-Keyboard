@@ -30,7 +30,8 @@
 
         <SwitchPreference
             android:key="theme_key_borders"
-            android:title="@string/key_borders"/>
+            android:title="@string/key_borders"
+            android:defaultValue="true" />
 
         <SwitchPreference
             android:key="theme_auto_day_night"
@@ -50,7 +51,8 @@
 
         <SwitchPreference
             android:key="navbar_color"
-            android:title="@string/theme_navbar"/>
+            android:title="@string/theme_navbar"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 

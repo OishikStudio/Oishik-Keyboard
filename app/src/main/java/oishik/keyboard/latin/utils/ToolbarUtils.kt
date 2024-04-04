@@ -78,15 +78,15 @@ private fun getStyleableIconId(key: ToolbarKey) = when (key) {
 
 // names need to be aligned with resources strings (using lowercase of key.name)
 enum class ToolbarKey {
-    VOICE, CLIPBOARD, UNDO, REDO, SETTINGS, SELECT_ALL, SELECT_WORD, COPY, ONE_HANDED, LEFT, RIGHT, UP, DOWN,
-    FULL_LEFT, FULL_RIGHT, INCOGNITO, AUTOCORRECT, CLEAR_CLIPBOARD
+    VOICE, UNDO, REDO, CLIPBOARD, SETTINGS, SELECT_ALL, SELECT_WORD, COPY, ONE_HANDED, FULL_LEFT, LEFT,
+    RIGHT, UP, DOWN, FULL_RIGHT, INCOGNITO, AUTOCORRECT, CLEAR_CLIPBOARD
 }
 
 fun toToolbarKeyString(keys: Collection<ToolbarKey>) = keys.joinToString(";") { it.name }
 
 val defaultToolbarPref = entries.filterNot { it == CLEAR_CLIPBOARD }.joinToString(";") {
     when (it) {
-        INCOGNITO, AUTOCORRECT, UP, DOWN, ONE_HANDED, FULL_LEFT, FULL_RIGHT -> "${it.name},false"
+        VOICE, SETTINGS, SELECT_WORD, ONE_HANDED,UP, DOWN, INCOGNITO, AUTOCORRECT -> "${it.name},false"
         else -> "${it.name},true"
     }
 }

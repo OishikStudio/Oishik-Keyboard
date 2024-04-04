@@ -142,21 +142,21 @@ public class SettingsValues {
         mSlidingKeyInputPreviewEnabled = prefs.getBoolean(
                 DebugSettings.PREF_SLIDING_KEY_INPUT_PREVIEW, true);
         mShowsVoiceInputKey = mInputAttributes.mShouldShowVoiceInputKey;
-        final String languagePref = prefs.getString(Settings.PREF_LANGUAGE_SWITCH_KEY, "off");
+        final String languagePref = prefs.getString(Settings.PREF_LANGUAGE_SWITCH_KEY, "internal");
         mLanguageSwitchKeyToOtherImes = languagePref.equals("input_method") || languagePref.equals("both");
         mLanguageSwitchKeyToOtherSubtypes = languagePref.equals("internal") || languagePref.equals("both");
         mShowsNumberRow = prefs.getBoolean(Settings.PREF_SHOW_NUMBER_ROW, false);
         mLocalizedNumberRow = prefs.getBoolean(Settings.PREF_LOCALIZED_NUMBER_ROW, true);
-        mShowsHints = prefs.getBoolean(Settings.PREF_SHOW_HINTS, true);
+        mShowsHints = prefs.getBoolean(Settings.PREF_SHOW_HINTS, false);
         mShowsPopupHints = prefs.getBoolean(Settings.PREF_SHOW_POPUP_HINTS, false);
-        mSpaceForLangChange = prefs.getBoolean(Settings.PREF_SPACE_TO_CHANGE_LANG, true);
+        mSpaceForLangChange = prefs.getBoolean(Settings.PREF_SPACE_TO_CHANGE_LANG, false);
         mShowsEmojiKey = prefs.getBoolean(Settings.PREF_SHOW_EMOJI_KEY, false);
         mVarToolbarDirection = prefs.getBoolean(Settings.PREF_VARIABLE_TOOLBAR_DIRECTION, true);
         mUsePersonalizedDicts = prefs.getBoolean(Settings.PREF_KEY_USE_PERSONALIZED_DICTS, true);
         mUseDoubleSpacePeriod = prefs.getBoolean(Settings.PREF_KEY_USE_DOUBLE_SPACE_PERIOD, true)
                 && inputAttributes.mIsGeneralTextInput;
         mBlockPotentiallyOffensive = Settings.readBlockPotentiallyOffensive(prefs, res);
-        mUrlDetectionEnabled = prefs.getBoolean(Settings.PREF_URL_DETECTION, false);
+        mUrlDetectionEnabled = prefs.getBoolean(Settings.PREF_URL_DETECTION, true);
         mAutoCorrectionEnabledPerUserSettings = Settings.readAutoCorrectEnabled(prefs);
         mAutoCorrectEnabled = mAutoCorrectionEnabledPerUserSettings
                 && (mInputAttributes.mInputTypeShouldAutoCorrect || Settings.readMoreAutoCorrectEnabled(prefs))
@@ -218,13 +218,25 @@ public class SettingsValues {
 
         // read locale-specific popup key settings, fall back to global settings
         final String popupKeyTypesDefault = prefs.getString(Settings.PREF_POPUP_KEYS_ORDER, PopupKeysUtilsKt.POPUP_KEYS_ORDER_DEFAULT);
-        mPopupKeyTypes = PopupKeysUtilsKt.getEnabledPopupKeys(prefs, Settings.PREF_POPUP_KEYS_ORDER + "_" + mLocale.toLanguageTag(), popupKeyTypesDefault);
+        String popupKeyTypesDefaultBNBDSpecific = popupKeyTypesDefault; // Default value if not bn-BD
+
+        if (mLocale.toLanguageTag().equals("bn-BD")) {
+            popupKeyTypesDefaultBNBDSpecific = PopupKeysUtilsKt.POPUP_KEYS_LABEL_DEFAULT_BN_BD;
+        }
+        mPopupKeyTypes = PopupKeysUtilsKt.getEnabledPopupKeys(prefs, Settings.PREF_POPUP_KEYS_ORDER + "_" + mLocale.toLanguageTag(), popupKeyTypesDefaultBNBDSpecific);
+
         final String popupKeyLabelDefault = prefs.getString(Settings.PREF_POPUP_KEYS_LABELS_ORDER, PopupKeysUtilsKt.POPUP_KEYS_LABEL_DEFAULT);
-        mPopupKeyLabelSources = PopupKeysUtilsKt.getEnabledPopupKeys(prefs, Settings.PREF_POPUP_KEYS_LABELS_ORDER + "_" + mLocale.toLanguageTag(), popupKeyLabelDefault);
+        String popupKeyLabelDefaultBNBDSpecific = popupKeyLabelDefault; // Default value if not bn-BD
+
+        if (mLocale.toLanguageTag().equals("bn-BD")) {
+            popupKeyLabelDefaultBNBDSpecific = PopupKeysUtilsKt.POPUP_KEYS_ORDER_DEFAULT_BN_BD;
+        }
+        mPopupKeyLabelSources = PopupKeysUtilsKt.getEnabledPopupKeys(prefs, Settings.PREF_POPUP_KEYS_LABELS_ORDER + "_" + mLocale.toLanguageTag(), popupKeyLabelDefaultBNBDSpecific);
+
 
         mAddToPersonalDictionary = prefs.getBoolean(Settings.PREF_ADD_TO_PERSONAL_DICTIONARY, false);
         mUseContactsDictionary = prefs.getBoolean(Settings.PREF_USE_CONTACTS, false);
-        mCustomNavBarColor = prefs.getBoolean(Settings.PREF_NAVBAR_COLOR, false);
+        mCustomNavBarColor = prefs.getBoolean(Settings.PREF_NAVBAR_COLOR, true);
         mNarrowKeyGaps = prefs.getBoolean(Settings.PREF_NARROW_KEY_GAPS, true);
         mSettingsValuesForSuggestion = new SettingsValuesForSuggestion(
                 mBlockPotentiallyOffensive,

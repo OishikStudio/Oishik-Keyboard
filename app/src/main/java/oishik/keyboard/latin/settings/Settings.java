@@ -270,7 +270,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     }
 
     public static boolean readAutoCorrectEnabled(final SharedPreferences prefs) {
-        return prefs.getBoolean(PREF_AUTO_CORRECTION, true);
+        return prefs.getBoolean(PREF_AUTO_CORRECTION, false);
     }
 
     public static boolean readMoreAutoCorrectEnabled(final SharedPreferences prefs) {
@@ -387,7 +387,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     }
 
     public static int readHorizontalSpaceSwipe(final SharedPreferences prefs) {
-        return switch (prefs.getString(PREF_SPACE_HORIZONTAL_SWIPE, "none")) {
+        return switch (prefs.getString(PREF_SPACE_HORIZONTAL_SWIPE, "move_cursor")) {
             case "move_cursor" -> KeyboardActionListener.SWIPE_MOVE_CURSOR;
             case "switch_language" -> KeyboardActionListener.SWIPE_SWITCH_LANGUAGE;
             default -> KeyboardActionListener.SWIPE_NO_ACTION;
@@ -656,7 +656,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
                 final int background = readUserColor(prefs, context, PREF_COLOR_BACKGROUND_SUFFIX, isNight);
                 if (ColorUtilKt.isBrightColor(background)) {
                     // but if key borders are enabled, we still want reasonable contrast
-                    if (!prefs.getBoolean(Settings.PREF_THEME_KEY_BORDERS, false)
+                    if (!prefs.getBoolean(Settings.PREF_THEME_KEY_BORDERS, true)
                             || ColorUtilKt.isGoodContrast(Color.BLACK, readUserColor(prefs, context, PREF_COLOR_KEYS_SUFFIX, isNight)))
                         return Color.BLACK;
                     else

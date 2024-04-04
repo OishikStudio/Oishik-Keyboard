@@ -90,7 +90,7 @@ private constructor(val themeId: Int, @JvmField val mStyleId: Int) {
         fun getKeyboardTheme(context: Context): KeyboardTheme {
             val prefs = DeviceProtectedUtils.getSharedPreferences(context)
             val style = prefs.getString(Settings.PREF_THEME_STYLE, STYLE_MATERIAL)
-            val borders = prefs.getBoolean(Settings.PREF_THEME_KEY_BORDERS, false)
+            val borders = prefs.getBoolean(Settings.PREF_THEME_KEY_BORDERS, true)
             val matchingId = when (style) {
                 STYLE_HOLO -> THEME_ID_HOLO_BASE
                 STYLE_ROUNDED -> if (borders) THEME_ID_ROUNDED_BASE_BORDER else THEME_ID_ROUNDED_BASE
@@ -107,7 +107,7 @@ private constructor(val themeId: Int, @JvmField val mStyleId: Int) {
 
         @JvmStatic
         fun getThemeColors(themeColors: String, themeStyle: String, context: Context, prefs: SharedPreferences): Colors {
-            val hasBorders = prefs.getBoolean(Settings.PREF_THEME_KEY_BORDERS, false)
+            val hasBorders = prefs.getBoolean(Settings.PREF_THEME_KEY_BORDERS, true)
             val useNightImage = Settings.readDayNightPref(prefs, context.resources) && ResourceUtils.isNight(context.resources)
             val backgroundImage = Settings.readUserBackgroundImage(context, useNightImage)
             return when (themeColors) {

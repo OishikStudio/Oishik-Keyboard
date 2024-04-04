@@ -52,7 +52,7 @@
         android:title="@string/prefs_long_press_keyboard_to_change_lang"
         android:summary="@string/prefs_long_press_keyboard_to_change_lang_summary"
         android:persistent="true"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <SwitchPreference
         android:key="enable_emoji_alt_physical_key"
@@ -95,7 +95,7 @@
             android:key="url_detection"
             android:title="@string/url_detection_title"
             android:summary="@string/url_detection_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <Preference
             android:key="custom_background_image"

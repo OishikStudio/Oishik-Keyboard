@@ -14,7 +14,7 @@
             android:key="show_hints"
             android:title="@string/show_hints"
             android:summary="@string/show_hints_summary"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:persistent="true" />
 
         <Preference
@@ -84,7 +84,7 @@
             android:title="@string/show_language_switch_key"
             android:entries="@array/language_switch_key_entries"
             android:entryValues="@array/language_switch_key_values"
-            android:defaultValue="off"
+            android:defaultValue="internal"
             android:summary="%s"
             android:persistent="true" />
 
