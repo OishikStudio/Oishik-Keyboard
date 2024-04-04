@@ -682,6 +682,21 @@ New dictionary:
     <string name="select_input_method">Choose input method</string>
     <!-- Settings screen title for appearance preferences [CHAR LIMIT=33] -->
     <string name="settings_screen_appearance">"Appearance"</string>
+    <!-- FAQ title -->
+    <string name="faq_title">FAQ</string>
+    <!-- FAQ summary -->
+    <string name="faq_summary">Frequently asked questions</string>
+    <!-- FAQ text -->
+    <string name="faq_message">
+        &#9654;\tকীভাবে র‍্য (র‍্যাম, র‍্যাব) টাইপ করব? &lt;br&gt;
+        \t\t\tর বর্ণ ট্যাপ করে ধরে রাখলে র‍্য টাইপের পপআপ আসবে। &lt;br&gt; &lt;br&gt;
+        &#9654;\tকীভাবে ৎ (খণ্ড ত) টাইপ করব? &lt;br&gt;
+        \t\t\tত বর্ণ ট্যাপ করে ধরে রাখলে ৎ টাইপের পপআপ আসবে। &lt;br&gt; &lt;br&gt;
+        &#9654;\tকীভাবে ডাবল দাঁড়ি (॥), ZWJ, ZWNJ, নুকতা (়), ঈশ্বর চিহ্ন (৺), ৡ, ৰ, ৱ এর মতো বর্ণগুলো টাইপ করব? &lt;br&gt;
+        \t\t\tদাঁড়ি (।) ট্যাপ করে ধরে রাখলে ডাবল দাঁড়ি (॥), ZWJ, ZWNJ টাইপের পপআপ আসবে। এছাড়া নুকতা (়), ঈশ্বর চিহ্ন (৺), ৡ, ৰ, ৱ ইত্যাদি টাইপের জন্য চন্দ্রবিন্দু (ঁ) ট্যাপ করে ধরে রাখতে হবে। &lt;br&gt; &lt;br&gt;
+        &#9654;\tকীভাবে ইমোজি টাইপ করব? &lt;br&gt;
+        \t\t\tকমা (,) বা Enter key ট্যাপ করে ধরে রাখলে ইমোজি কিবোর্ডের পপআপ আসবে। এছাড়া &lt;i&gt;Settings > Preference&lt;/i&gt; থেকে Additional key হিসেবে &lt;i&gt;Emoji key&lt;/i&gt; চালু করা যেতে পারে।
+    </string>
     <!-- Hidden features title -->
     <string name="hidden_features_title">Description of hidden features</string>
     <!-- Hidden features summary -->
@@ -709,7 +724,7 @@ New dictionary:
         \t&#8226; When using debug APK, you can find Debug Settings within the Advanced Preferences,though the usefulness is limited except for dumping dictionaries into the log. &lt;br&gt; &lt;br&gt;
         \t&#8226; In the event of an application crash, you will be prompted whether you want the crash logs when you open the Settings. &lt;br&gt; &lt;br&gt;
         \t&#8226; When using multilingual typing, space bar will show an confidence value used for determining the currently used language. &lt;br&gt; &lt;br&gt;
-        \t&#8226; Suggestions will have some tiny numbers on top showing some internal score and source dictionary (can be disabled).
+        \t&#8226; Suggestions will have some tiny numbers on top showing some internal score and source dictionary (can be disabled). &lt;br&gt; &lt;br&gt;
         &#9658; For users doing manual backups with root access: Starting at Android 7, the shared preferences file is not in the default location, because the app is using %s. &lt;br&gt;
         This is necessary so the settings can be read before the device is unlocked, e.g. at boot. &lt;br&gt;
         The file is located in /data/user_de/0/package_id/shared_prefs/, though this may depend on the device and Android version.</string>

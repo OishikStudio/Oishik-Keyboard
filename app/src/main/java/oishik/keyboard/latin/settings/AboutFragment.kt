@@ -29,6 +29,7 @@ class AboutFragment : SubScreenFragment() {
         super.onCreate(icicle)
         addPreferencesFromResource(R.xml.prefs_screen_about)
 
+        setupFAQ()
         setupHiddenFeatures()
         setupVersionPref()
         findPreference<Preference>("log_reader")?.setOnPreferenceClickListener {
@@ -54,6 +55,22 @@ class AboutFragment : SubScreenFragment() {
         }
     }
 
+    private fun setupFAQ() {
+        findPreference<Preference>("faq")?.onPreferenceClickListener =
+            Preference.OnPreferenceClickListener {
+                val message = requireContext().getString(R.string.faq_message)
+                val dialogMessage = SpannableStringUtils.fromHtml(message)
+                val builder = AlertDialog.Builder(requireContext())
+                    .setIcon(R.drawable.ic_settings_about_faq)
+                    .setTitle(R.string.faq_title)
+                    .setMessage(dialogMessage)
+                    .setPositiveButton(R.string.dialog_close, null)
+                    .create()
+                builder.show()
+                (builder.findViewById<View>(android.R.id.message) as TextView).movementMethod = LinkMovementMethod.getInstance()
+                true
+            }
+    }
     private fun setupHiddenFeatures() {
         findPreference<Preference>("hidden_features")?.onPreferenceClickListener =
             Preference.OnPreferenceClickListener {

@@ -28,6 +28,13 @@
     </Preference>
 
     <Preference
+        android:title="@string/faq_title"
+        android:summary="@string/faq_summary"
+        android:key="faq"
+        android:icon="@drawable/ic_settings_about_faq">
+    </Preference>
+
+    <Preference
         android:title="@string/hidden_features_title"
         android:summary="@string/hidden_features_summary"
         android:key="hidden_features"
