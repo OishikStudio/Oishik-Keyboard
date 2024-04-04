@@ -172,7 +172,7 @@ object LocaleUtils {
         val displayName = locale.getDisplayName(locale)
         if (displayName.isEmpty()) return false
         return when (Character.getDirectionality(displayName.codePointAt(0))) {
-            Character.DIRECTIONALITY_RIGHT_TO_LEFT, Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC -> true
+            Character.DIRECTIONALITY_RIGHT_TO_LEFT -> true
             else -> false
         }
     }

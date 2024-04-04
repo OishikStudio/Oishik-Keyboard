@@ -22,7 +22,6 @@ import android.view.inputmethod.EditorInfo;
 import androidx.annotation.NonNull;
 
 import helium314.keyboard.event.Event;
-import helium314.keyboard.event.HangulEventDecoder;
 import helium314.keyboard.event.InputTransaction;
 import helium314.keyboard.keyboard.Keyboard;
 import helium314.keyboard.keyboard.KeyboardSwitcher;
@@ -432,23 +431,7 @@ public final class InputLogic {
         mWordBeingCorrectedByCursor = null;
         mJustRevertedACommit = false;
         final Event processedEvent;
-        if (currentKeyboardScript.equals(ScriptUtils.SCRIPT_HANGUL)
-                // only use the Hangul chain if codepoint may actually be Hangul
-                // todo: this whole hangul-related logic should probably be somewhere else
-                // need to use hangul combiner for whitespace, because otherwise the current word
-                // seems to get deleted / replaced by space during mConnection.endBatchEdit()
-                // similar for functional keys (codePoint -1)
-                && (event.getMCodePoint() >= 0x1100 || Character.isWhitespace(event.getMCodePoint()) || event.getMCodePoint() == -1)) {
-            mWordComposer.setHangul(true);
-            final Event hangulDecodedEvent = HangulEventDecoder.decodeSoftwareKeyEvent(event);
-            // todo: here hangul combiner does already consume the event, and appends typed codepoint
-            //  to the current word instead of considering the cursor position
-            //  position is actually not visible to the combiner, how to fix?
-            processedEvent = mWordComposer.processEvent(hangulDecodedEvent);
-        } else {
-            mWordComposer.setHangul(false);
-            processedEvent = mWordComposer.processEvent(event);
-        }
+        processedEvent = mWordComposer.processEvent(event);
         final InputTransaction inputTransaction = new InputTransaction(settingsValues,
                 processedEvent, SystemClock.uptimeMillis(), mSpaceState,
                 getActualCapsMode(settingsValues, keyboardShiftMode));
@@ -702,7 +685,6 @@ public final class InputLogic {
                 inputTransaction.setDidAffectContents();
                 break;
             case KeyCode.MULTIPLE_CODE_POINTS:
-                // added in the hangul branch, createEventChainFromSequence
                 // this introduces issues like space being added behind cursor, or input deleting
                 // a word, but the keepCursorPosition applyProcessedEvent seems to help here
                 mWordComposer.applyProcessedEvent(event, true);

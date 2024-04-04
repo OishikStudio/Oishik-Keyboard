@@ -51,18 +51,8 @@
     <string name="gesture_space_aware_summary">"Input spaces during gestures by gliding to the space key"</string>
     <string name="subtype_en_GB">"English (UK)"</string>
     <string name="subtype_en_US">"English (US)"</string>
-    <string name="subtype_es_US">"Spanish (US)"</string>
-    <string name="subtype_hi_Latn">"Hinglish"</string>
-    <string name="subtype_xdq">"Kaitag"</string>
-    <string name="subtype_sr_Latn">"Serbian (Latin)"</string>
     <string name="subtype_with_layout_en_GB">English (UK) (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
     <string name="subtype_with_layout_en_US">English (US) (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
-    <string name="subtype_with_layout_es_US">Spanish (US) (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
-    <string name="subtype_with_layout_hi_Latn">Hinglish (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
-    <string name="subtype_with_layout_xdq">Kaitag (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
-    <string name="subtype_with_layout_sr_Latn">Serbian (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
-    <string name="subtype_generic_traditional"><xliff:g id="LANGUAGE_NAME" example="Nepali">%s</xliff:g> (Traditional)</string>
-    <string name="subtype_generic_compact"><xliff:g id="LANGUAGE_NAME" example="Hindi">%s</xliff:g> (Compact)</string>
     <string name="subtype_no_language">"No language (Alphabet)"</string>
     <string name="subtype_no_language_qwerty">"Alphabet (QWERTY)"</string>
     <string name="subtype_no_language_qwertz">"Alphabet (QWERTZ)"</string>
@@ -153,7 +143,6 @@
     <string name="enable_clipboard_history">Enable clipboard history</string>
     <string name="enable_clipboard_history_summary">If disabled, clipboard key will paste clipboard content if any</string>
     <string name="clipboard_history_retention_time">History retention time</string>
-    <string name="subtype_with_layout_bn_BD"><xliff:g id="LANGUAGE_NAME" example="Bangla">%s</xliff:g> (Akkhor)</string>
     <string name="autospace_after_punctuation">Autospace after punctuation</string>
     <string name="autospace_after_punctuation_summary">Automatically insert space after punctuation when typing a new word</string>
     <string name="use_system_language_to_select_input_method_subtypes">"Use system languages"</string>

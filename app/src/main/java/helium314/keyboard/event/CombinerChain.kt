@@ -30,20 +30,6 @@ class CombinerChain(initialText: String) {
     // The feedback on the composing state, as described above
     private val mStateFeedback = SpannableStringBuilder()
     private val mCombiners = ArrayList<Combiner>()
-    // Hangul combiner affects other scripts, e.g. period is seen as port of a word for latin,
-    // so we need to remove the combiner when not writing in hangul script.
-    // Maybe it would be better to always have the Hangul combiner, but make sure it doesn't affect
-    // events for other scripts, but how?
-    // todo: this really should be done properly, hangul combiner should do nothing when it's not needed
-    var isHangul = false
-        set(value) {
-            if (field == value) return
-            field = value
-            if (!value)
-                mCombiners.removeAll { it is HangulCombiner }
-            else if (mCombiners.none { it is HangulCombiner })
-                mCombiners.add(HangulCombiner())
-        }
 
     /**
      * Create an combiner chain.

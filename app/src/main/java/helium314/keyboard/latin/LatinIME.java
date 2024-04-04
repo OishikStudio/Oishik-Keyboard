@@ -48,7 +48,6 @@ import helium314.keyboard.keyboard.internal.keyboard_parser.floris.KeyCode;
 import helium314.keyboard.latin.common.InsetsOutlineProvider;
 import helium314.keyboard.dictionarypack.DictionaryPackConstants;
 import helium314.keyboard.event.Event;
-import helium314.keyboard.event.HangulEventDecoder;
 import helium314.keyboard.event.HardwareEventDecoder;
 import helium314.keyboard.event.HardwareKeyboardEventDecoder;
 import helium314.keyboard.event.InputTransaction;
@@ -1744,15 +1743,7 @@ public class LatinIME extends InputMethodService implements
             return super.onKeyDown(keyCode, keyEvent);
         }
         final Event event;
-        if (mRichImm.getCurrentSubtypeLocale().getLanguage().equals("ko")) {
-            final RichInputMethodSubtype subtype = mKeyboardSwitcher.getKeyboard() == null
-                    ? mRichImm.getCurrentSubtype()
-                    : mKeyboardSwitcher.getKeyboard().mId.mSubtype;
-            event = HangulEventDecoder.decodeHardwareKeyEvent(subtype, keyEvent,
-                        () -> getHardwareKeyEventDecoder(keyEvent.getDeviceId()).decodeHardwareKey(keyEvent));
-        } else {
-            event = getHardwareKeyEventDecoder(keyEvent.getDeviceId()).decodeHardwareKey(keyEvent);
-        }
+        event = getHardwareKeyEventDecoder(keyEvent.getDeviceId()).decodeHardwareKey(keyEvent);
         // If the event is not handled by LatinIME, we just pass it to the parent implementation.
         // If it's handled, we return true because we did handle it.
         if (event.isHandled()) {

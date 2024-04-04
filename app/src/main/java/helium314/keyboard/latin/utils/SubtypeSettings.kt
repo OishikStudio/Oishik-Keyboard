@@ -44,11 +44,6 @@ fun getMatchingLayoutSetNameForLocale(locale: Locale): String {
     if (name != null) return name
     return when (locale.script()) {
         ScriptUtils.SCRIPT_LATIN -> "qwerty"
-        ScriptUtils.SCRIPT_ARMENIAN -> "armenian_phonetic"
-        ScriptUtils.SCRIPT_CYRILLIC -> "ru"
-        ScriptUtils.SCRIPT_GREEK -> "greek"
-        ScriptUtils.SCRIPT_HEBREW -> "hebrew"
-        ScriptUtils.SCRIPT_GEORGIAN -> "georgian"
         ScriptUtils.SCRIPT_BENGALI -> "bengali_unijoy"
         else -> throw RuntimeException("Wrong script supplied: ${locale.script()}")
     }

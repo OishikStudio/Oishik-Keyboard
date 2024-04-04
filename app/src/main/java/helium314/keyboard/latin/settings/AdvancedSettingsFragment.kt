@@ -30,7 +30,6 @@ import helium314.keyboard.keyboard.internal.keyboard_parser.LAYOUT_NUMPAD_LANDSC
 import helium314.keyboard.keyboard.internal.keyboard_parser.LAYOUT_PHONE
 import helium314.keyboard.keyboard.internal.keyboard_parser.LAYOUT_PHONE_SYMBOLS
 import helium314.keyboard.keyboard.internal.keyboard_parser.LAYOUT_SYMBOLS
-import helium314.keyboard.keyboard.internal.keyboard_parser.LAYOUT_SYMBOLS_ARABIC
 import helium314.keyboard.keyboard.internal.keyboard_parser.LAYOUT_SYMBOLS_SHIFTED
 import helium314.keyboard.latin.AudioAndHapticFeedbackManager
 import helium314.keyboard.latin.BuildConfig
@@ -157,7 +156,7 @@ class AdvancedSettingsFragment : SubScreenFragment() {
     }
 
     private fun showCustomizeLayoutsDialog() {
-        val layouts = listOf(LAYOUT_SYMBOLS, LAYOUT_SYMBOLS_SHIFTED, LAYOUT_SYMBOLS_ARABIC, LAYOUT_NUMBER, LAYOUT_NUMPAD, LAYOUT_NUMPAD_LANDSCAPE, LAYOUT_PHONE, LAYOUT_PHONE_SYMBOLS)
+        val layouts = listOf(LAYOUT_SYMBOLS, LAYOUT_SYMBOLS_SHIFTED, LAYOUT_NUMBER, LAYOUT_NUMPAD, LAYOUT_NUMPAD_LANDSCAPE, LAYOUT_PHONE, LAYOUT_PHONE_SYMBOLS)
         val layoutNames = layouts.map { it.getStringResourceOrName("layout_", requireContext()) }.toTypedArray()
         AlertDialog.Builder(requireContext())
             .setTitle(R.string.customize_symbols_number_layouts)

@@ -768,7 +768,7 @@ abstract class KeyboardParser(private val params: KeyboardParams, private val co
         private fun getLayoutFileName(params: KeyboardParams, context: Context, overrideElementId: Int? = null): String {
             var checkForCustom = true
             val layoutName = when (overrideElementId ?: params.mId.mElementId) {
-                KeyboardId.ELEMENT_SYMBOLS -> if (params.mId.locale.script() == ScriptUtils.SCRIPT_ARABIC) LAYOUT_SYMBOLS_ARABIC else LAYOUT_SYMBOLS
+                KeyboardId.ELEMENT_SYMBOLS ->  LAYOUT_SYMBOLS
                 KeyboardId.ELEMENT_SYMBOLS_SHIFTED -> LAYOUT_SYMBOLS_SHIFTED
                 KeyboardId.ELEMENT_NUMPAD -> if (context.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE)
                     LAYOUT_NUMPAD_LANDSCAPE
@@ -798,20 +798,20 @@ abstract class KeyboardParser(private val params: KeyboardParams, private val co
             val language = params.mId.locale.language
             // only for alphabet, but some exceptions for shift layouts
             val enableProximityCharsCorrection = params.mId.isAlphabetKeyboard && when (layout) {
-                "bengali_akkhor", "georgian", "hindi", "lao", "nepali_romanized", "nepali_traditional", "sinhala", "thai" ->
+                "" ->
                     params.mId.mElementId == KeyboardId.ELEMENT_ALPHABET
                 else -> true
             }
             val allowRedundantPopupKeys = params.mId.mElementId != KeyboardId.ELEMENT_SYMBOLS // todo: always set to false?
             // essentially this is default for 4 row and non-alphabet layouts, maybe this could be determined automatically instead of using a list
             // todo: check the difference between default (i.e. none) and holo (test behavior on keyboard)
-            val touchPositionCorrectionData = if (params.mId.isAlphabetKeyboard && layout in listOf("armenian_phonetic", "khmer", "lao", "malayalam", "pcqwerty", "thai"))
+            val touchPositionCorrectionData = if (params.mId.isAlphabetKeyboard && layout in listOf("pcqwerty"))
                     R.array.touch_position_correction_data_default
                 else R.array.touch_position_correction_data_holo
             // custom non-json layout for non-uppercase language should not have shift key
             val hasShiftKey = !params.mId.isAlphabetKeyboard
-                    || layout !in listOf("hindi_compact", "bengali", "arabic", "arabic_pc", "hebrew", "kannada", "kannada_extended","malayalam", "marathi", "farsi", "tamil", "telugu")
-            val numbersOnTopRow = layout !in listOf("pcqwerty", "lao", "thai", "korean_sebeolsik_390", "korean_sebeolsik_final")
+                    || layout !in listOf("")
+            val numbersOnTopRow = layout !in listOf("pcqwerty")
             return LayoutInfos(enableProximityCharsCorrection, allowRedundantPopupKeys, touchPositionCorrectionData, hasShiftKey, numbersOnTopRow)
         }
     }
@@ -872,7 +872,6 @@ private const val POPUP_EYS_NAVIGATE_EMOJI_PREVIOUS_NEXT = "!fixedColumnOrder!4,
 
 const val LAYOUT_SYMBOLS = "symbols"
 const val LAYOUT_SYMBOLS_SHIFTED = "symbols_shifted"
-const val LAYOUT_SYMBOLS_ARABIC = "symbols_arabic"
 const val LAYOUT_NUMPAD = "numpad"
 const val LAYOUT_NUMPAD_LANDSCAPE = "numpad_landscape"
 const val LAYOUT_NUMBER = "number"

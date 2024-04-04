@@ -1,9 +1,0 @@
-[popup_keys]
-г ґ
-ь ъ
-і ї
-' ’ ‚ ‘
-" ” „ “
-
-[labels]
-alphabet: АБВ

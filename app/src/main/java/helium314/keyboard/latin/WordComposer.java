@@ -83,10 +83,6 @@ public final class WordComposer {
         mRejectedBatchModeSuggestion = null;
         refreshTypedWordCache();
         final Keyboard keyboard = KeyboardSwitcher.getInstance().getKeyboard();
-        if (keyboard != null)
-            // initializing with the right state is important for the spell checker,
-            // which creates a new WordComposer when receiving suggestions
-            mCombinerChain.setHangul(keyboard.mId.mSubtype.getLocale().getLanguage().equals("ko"));
     }
 
     public ComposedData getComposedDataSnapshot() {
@@ -104,9 +100,6 @@ public final class WordComposer {
             mCombiningSpec = nonNullCombiningSpec;
         }
     }
-
-    /** Forwards the state to CombinerChain, which disables or enables the Hangul combiner */
-    public void setHangul(final boolean enabled) { mCombinerChain.setHangul(enabled); }
 
     /**
      * Clear out the keys registered so far.
@@ -177,8 +170,7 @@ public final class WordComposer {
         applyProcessedEvent(event, false);
     }
 
-    // specifically for that KeyCode.MULTIPLE_CODE_POINTS Hangul event: try keeping cursor position
-    // because typically nothing changes, todo: if really nothing changes maybe there is a better way to do it
+    // todo: if really nothing changes maybe there is a better way to do it
     public void applyProcessedEvent(final Event event, final boolean keepCursorPosition) {
         mCombinerChain.applyProcessedEvent(event);
         final int primaryCode = event.getMCodePoint();

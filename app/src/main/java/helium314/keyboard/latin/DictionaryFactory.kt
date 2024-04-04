@@ -76,12 +76,7 @@ private fun checkAndAddDictionaryToListIfNotExisting(file: File, dicts: MutableL
     )
 
     if (readOnlyBinaryDictionary.isValidDictionary) {
-        if (locale.language == "ko") {
-            // Use KoreanDictionary for Korean locale
-            dicts.add(KoreanDictionary(readOnlyBinaryDictionary))
-        } else {
-            dicts.add(readOnlyBinaryDictionary)
-        }
+        dicts.add(readOnlyBinaryDictionary)
     } else {
         readOnlyBinaryDictionary.close()
         killDictionary(file)

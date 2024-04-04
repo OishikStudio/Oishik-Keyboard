@@ -136,18 +136,7 @@ class InputLogicTest {
 
     // todo: make it work, but it might not be that simple because adding is done in combiner
     //  https://github.com/Helium314/HeliBoard/issues/214
-    @Test fun insertLetterIntoWordHangul() {
-        reset()
-        currentScript = ScriptUtils.SCRIPT_HANGUL
-        chainInput("ㅛㅎㄹㅎㅕㅛ")
-        setCursorPosition(3)
-        input('ㄲ') // fails, as expected from the hangul issue when processing the event in onCodeInput
-        assertEquals("ㅛㅎㄹㄲ혀ㅛ", getWordAtCursor())
-        assertEquals("ㅛㅎㄹㄲ혀ㅛ", getText())
-        assertEquals("ㅛㅎㄹㄲ혀ㅛ", textBeforeCursor + textAfterCursor)
-        assertEquals(4, getCursorPosition())
-        assertEquals(4, cursor)
-    }
+
 
     @Test fun separatorUnselectsWord() {
         reset()
@@ -566,12 +555,7 @@ class InputLogicTest {
         latinIME.onEvent(Event.createEventForCodePointFromUnknownSource(codePoint))
         handleMessages()
 
-        if (currentScript != ScriptUtils.SCRIPT_HANGUL) { // check fails if hangul combiner merges symbols
-            if (phantomSpaceToInsert.isEmpty())
-                assertEquals(oldBefore + insert, textBeforeCursor)
-            else // in some cases autospace might be suppressed
-                assert(oldBefore + phantomSpaceToInsert + insert == textBeforeCursor || oldBefore + insert == textBeforeCursor)
-        }
+
         assertEquals(oldAfter, textAfterCursor)
         assertEquals(textBeforeCursor + textAfterCursor, getText())
         checkConnectionConsistency()
