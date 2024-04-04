@@ -98,6 +98,8 @@
     <string name="prefs_keyboard_height_scale">কিবোর্ডের উচ্চতার স্কেল</string>
     <string name="subtype_en_GB">ইংরেজি (ইউকে)</string>
     <string name="subtype_en_US">ইংরেজি (ইউএস)</string>
+    <string name="faq_title">সচরাচর জিজ্ঞাসা</string>
+    <string name="faq_summary">প্রায়ই জিজ্ঞাসিত হয় এমন প্রশ্ন</string>
     <string name="hidden_features_title">প্রচ্ছন্ন বৈশিষ্ট্য</string>
     <string name="hidden_features_summary">অপরিদৃষ্ট হতে পারে এমন বৈশিষ্ট্যের বর্ণনা</string>
     <string name="hidden_features_text">ডিভাইস সুরক্ষিত স্টোরেজ</string>
