@@ -614,6 +614,14 @@ New dictionary:
     <string name="theme_name_sand" tools:keep="@string/theme_name_sand">Sand</string>
     <!-- Theme name for violette theme -->
     <string name="theme_name_violette" tools:keep="@string/theme_name_violette">Violette</string>
+    <!-- Theme name for Signal theme -->
+    <string name="theme_name_signal" tools:keep="@string/theme_name_signal_night">Signal</string>
+    <!-- Theme name for Signal (Night) theme -->
+    <string name="theme_name_signal_night" tools:keep="@string/theme_name_signal_night">Signal Dark</string>
+    <!-- Theme name for WhatsApp theme -->
+    <string name="theme_name_whatsapp" tools:keep="@string/theme_name_signal_night">WhatsApp</string>
+    <!-- Theme name for WhatsApp (Night) theme -->
+    <string name="theme_name_whatsapp_night" tools:keep="@string/theme_name_signal_night">WhatsApp Dark</string>
     <!-- Theme name for user-defined theme -->
     <string name="theme_name_user" tools:keep="@string/theme_name_user">User-Defined</string>
     <!-- Theme name for user-defined theme night mode theme -->

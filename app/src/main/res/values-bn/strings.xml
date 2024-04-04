@@ -104,6 +104,14 @@
     <string name="hidden_features_message">► ক্লিপবোর্ড বোতামে (পরামর্শ ফলকের ঐচ্ছিক বোতাম) দীর্ঘ চাপ দিলে সিস্টেম ক্লিপবোর্ডের আধেয় পেস্ট করবে। &lt;br&gt; &lt;br&gt; ► পরামর্শ ফলকের টুলবারের কোনো বোতামে দীর্ঘ চাপ দিলে তা পরামর্শ ফলকে আবদ্ধ হবে। &lt;br&gt; &lt;br&gt; ► কমা বোতামে দীর্ঘ চাপ দিলে ক্লিপবোর্ড ভিউ, ইমোজি ভিউ, একক হাত মোড, সেটিংস অথবা ভাষা পরিবর্তন বোতাম উপলব্ধ হবে: &lt;br&gt; \t• সংশ্লিষ্ট বোতাম সক্ষম থাকলে ইমোজি ভিউ বা ভাষা পরিবর্তন বোতাম দৃশ্যমান থাকবে না; &lt;br&gt; \t• কিছু লেআউটের জন্য কমা বোতাম নয়, কিন্তু একই জায়গার বোতামটি, যেমন: Dvorak লেআউটে \'q\' বোতাম। &lt;br&gt; &lt;br&gt; ► ছদ্মবেশী বোতামে চাপ দিলে টুলবার উপলব্ধ হবে। &lt;br&gt; &lt;br&gt; ► স্লাইডিং কি ইনপুট: বড়ো হাতের অক্ষর লেখার জন্য শিফট বোতাম থেকে অন্য বোতামে সোয়াইপ করুন: &lt;br&gt; \t• সিম্বল কিবোর্ড থেকে সিম্বল এবং সম্পর্কিত অক্ষর লেখার জন্য \'?123\' বোতামেও এটি কাজ করে।&lt;br&gt; &lt;br&gt; ► পরামর্শ ফলকে কোনো পরামর্শে দীর্ঘ চাপ দিলে আরও পরামর্শ, অপসারণ করার জন্য অপসারণ বোতাম প্রদর্শিত হবে। &lt;br&gt; &lt;br&gt; ► আরও পরামর্শ খুলতে কোনো পরামর্শ থেকে উপরে সোয়াইপ করুন এবং নির্দিষ্ট পরামর্শ নির্বাচনের জন্য ছেড়ে দিন। &lt;br&gt; &lt;br&gt; ► আপনি ফাইল এক্সপ্লোরারে খোলার মাধ্যমে অভিধান সংযুক্ত করতে পারেন: &lt;br&gt; \t• এটি কেবল &lt;i&gt;content-uris&lt;/i&gt; এর সাথে কাজ করে, &lt;i&gt;file-uris&lt;/i&gt; এর সাথে নয়। অর্থাৎ কিছু ফাইল এক্সপ্লোরারের সাথে নাও কাজ করতে পারে। &lt;br&gt; &lt;br&gt; &lt;i&gt;কেবল ডিবাগ এপিকে&lt;/i&gt; &lt;br&gt; ► পরামর্শে দীর্ঘ চাপ দিলে তার উৎস-অভিধান দেখাবে। &lt;br&gt; &lt;br&gt; ► ডিবাগ সেটিংস উচ্চতর সেটিংসে উপলব্ধ। যদিও লগ ফাইলে অভিধান অবমুক্ত করা ছাড়া এর ব্যবহারযোগ্যতা সীমিত। &lt;br&gt; &lt;br&gt; ► অ্যাপ্লিকেশন ক্র্যাশের পরে সেটিংস খুললে আপনি ক্র্যাশ লগ চান কি না তা জিজ্ঞেস করা হবে৷ &lt;br&gt; &lt;br&gt; ► রুট উপলব্ধতাসহ ম্যানুয়াল ব্যাকআপ করা ব্যবহারকারীদের জন্য: Android 7 থেকে শেয়ারড্ প্রেফারেন্স ফাইল ডিফল্ট জায়গা নয়। কারণ অ্যাপ %s ব্যবহার করছে। &lt;br&gt; ডিভাইস আনলকের আগে সেটিংস খোলার জন্য এটি প্রয়োজনীয়, যেমন: বুট করার সময়। &lt;br&gt; ফাইলটি /data/user_de/0/package_id/shared_prefs/ থাকে। যদিও এটা ডিভাইস এবং অ্যান্ড্রয়েড সংস্করণের উপরে নির্ভর করে।</string>
     <string name="subtype_with_layout_en_GB">ইংরেজি (ইউকে) (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
     <string name="subtype_with_layout_en_US">ইংরেজি (ইউএস) (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
+    <string name="subtype_with_layout_es_US">স্প্যানিশ (ইউএস) (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
+    <string name="subtype_with_layout_hi_Latn">হিংলিশ (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
+    <string name="subtype_with_layout_sr_Latn">সার্বিয়ান (<xliff:g id="KEYBOARD_LAYOUT" example="QWERTY">%s</xliff:g>)</string>
+    <string name="subtype_generic_traditional"><xliff:g id="LANGUAGE_NAME" example="Nepali">%s</xliff:g> (প্রথাগত)</string>
+    <string name="subtype_with_layout_bn_BD"><xliff:g id="LANGUAGE_NAME" example="Bangla">%s</xliff:g> (অক্ষর)</string>
+    <string name="subtype_generic_compact"><xliff:g id="LANGUAGE_NAME" example="Hindi">%s</xliff:g> (সংক্ষিপ্ত)</string>
+    <string name="subtype_generic_sebeolsik_390"><xliff:g id="LANGUAGE_NAME" example="Korean">%s</xliff:g> (সেবালসিক 390)</string>
+    <string name="subtype_generic_sebeolsik_final"><xliff:g id="LANGUAGE_NAME" example="Korean">%s</xliff:g> (সেবালসিক Final)</string>
     <string name="subtype_no_language">কোনো ভাষা নয় (বর্ণমালা)</string>
     <string name="subtype_no_language_qwerty">বর্ণমালা (QWERTY)</string>
     <string name="subtype_no_language_qwertz">বর্ণমালা (QWERTZ)</string>
@@ -243,7 +251,7 @@
     <string name="backup_restore_title">ব্যাকআপ এবং পুনরুদ্ধার</string>
     <string name="checksum_mismatch_message">অপরিচিত লাইব্রেরি ফাইল। আপনি কি নিশ্চিত যে এটি একটি বিশ্বস্ত উৎস থেকে প্রাপ্ত এবং \'%s\' এর জন্য?</string>
     <string name="theme_name_dynamic">পরিবর্তনশীল রং</string>
-   <string name="main_colors">কেবল মূল রং প্রদর্শন</string>
+    <string name="main_colors">কেবল মূল রং প্রদর্শন</string>
     <string name="layout_symbols">প্রতীক</string>
     <string name="theme_name_brown">বাদামি</string>
     <string name="theme_name_signal">সিগন্যাল</string>

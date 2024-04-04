@@ -54,14 +54,18 @@ private constructor(val themeId: Int, @JvmField val mStyleId: Int) {
         const val THEME_PINK = "pink"
         const val THEME_SAND = "sand"
         const val THEME_VIOLETTE = "violette"
+        const val THEME_SIGNAL = "signal"
+        const val THEME_SIGNAL_NIGHT = "signal_night"
+        const val THEME_WHATSAPP = "whatsapp"
+        const val THEME_WHATSAPP_NIGHT = "whatsapp_night"
         val COLORS = listOfNotNull(
             THEME_LIGHT, if (Build.VERSION.SDK_INT < VERSION_CODES.S) null else THEME_DYNAMIC, THEME_HOLO_WHITE, THEME_DARK,
             THEME_DARKER, THEME_BLACK, THEME_BLUE_GRAY, THEME_BROWN, THEME_CHOCOLATE, THEME_CLOUDY, THEME_FOREST,
-            THEME_INDIGO, THEME_PINK, THEME_OCEAN, THEME_SAND, THEME_VIOLETTE, THEME_USER
+            THEME_INDIGO, THEME_PINK, THEME_OCEAN, THEME_SAND, THEME_SIGNAL, THEME_SIGNAL_NIGHT, THEME_VIOLETTE, THEME_WHATSAPP, THEME_WHATSAPP_NIGHT, THEME_USER
         )
         val COLORS_DARK = listOfNotNull(
             THEME_HOLO_WHITE, THEME_DARK, if (Build.VERSION.SDK_INT < VERSION_CODES.S) null else THEME_DYNAMIC,
-            THEME_DARKER, THEME_BLACK, THEME_CHOCOLATE, THEME_CLOUDY, THEME_FOREST, THEME_OCEAN, THEME_VIOLETTE, THEME_USER_NIGHT
+            THEME_DARKER, THEME_BLACK, THEME_CHOCOLATE, THEME_CLOUDY, THEME_FOREST, THEME_OCEAN, THEME_SIGNAL_NIGHT, THEME_VIOLETTE, THEME_WHATSAPP_NIGHT, THEME_USER_NIGHT
         )
         val STYLES = arrayOf(STYLE_MATERIAL, STYLE_HOLO, STYLE_ROUNDED)
 
@@ -311,6 +315,54 @@ private constructor(val themeId: Int, @JvmField val mStyleId: Int) {
                     Color.rgb(150, 150, 216),
                     Color.WHITE,
                     Color.WHITE,
+                    keyboardBackground = backgroundImage
+                )
+                THEME_SIGNAL -> DefaultColors(
+                    themeStyle,
+                    hasBorders,
+                    Color.rgb(51, 107, 167),
+                    Color.rgb(251, 252, 255),
+                    Color.rgb(231, 235, 243),
+                    Color.rgb(211, 218, 233),
+                    Color.rgb(231, 235, 243),
+                    Color.BLACK,
+                    Color.rgb(113, 117, 128),
+                    keyboardBackground = backgroundImage
+                )
+                THEME_SIGNAL_NIGHT -> DefaultColors(
+                    themeStyle,
+                    hasBorders,
+                    Color.rgb(51, 107, 167),
+                    Color.rgb(27, 28, 31),
+                    Color.rgb(48, 49, 51),
+                    Color.rgb(63, 64, 67),
+                    Color.rgb(48, 49, 51),
+                    Color.WHITE,
+                    Color.rgb(182, 183, 189),
+                    keyboardBackground = backgroundImage
+                )
+                THEME_WHATSAPP -> DefaultColors(
+                    themeStyle,
+                    hasBorders,
+                    Color.rgb(0, 168, 132),
+                    Color.rgb(239, 231, 222),
+                    Color.WHITE, //key
+                    Color.rgb(240, 240, 240),
+                    Color.WHITE, //space
+                    Color.BLACK,
+                    Color.rgb(124, 138, 147),
+                    keyboardBackground = backgroundImage
+                )
+                THEME_WHATSAPP_NIGHT -> DefaultColors(
+                    themeStyle,
+                    hasBorders,
+                    Color.rgb(0, 168, 132),
+                    Color.rgb(8, 20, 25),
+                    Color.rgb(32, 44, 51),
+                    Color.rgb(44, 60, 70),
+                    Color.rgb(32, 44, 51),
+                    Color.WHITE,
+                    Color.rgb(123, 138, 148),
                     keyboardBackground = backgroundImage
                 )
                 else /* THEME_LIGHT */ -> DefaultColors(
