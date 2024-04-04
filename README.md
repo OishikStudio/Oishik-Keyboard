@@ -177,12 +177,10 @@ HeliBoard (as a fork of OpenBoard) is licensed under GNU General Public License 
 
 See repo's [LICENSE](/LICENSE-GPL-3) file.
 
-Since the app is based on Apache 2.0 licensed AOSP Keyboard, an [Apache 2.0](LICENSE-Apache-2.0) license file is provided.
-
-The icon is licensed under [Creative Commons BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). A [license file](LICENSE-CC-BY-SA-4.0) is also included.
+Since the app is based on Apache 2.0 licensed AOSP Keyboard, an [Apache 2.0](LICENSE-Apache-2.0) license file is provided too.
 
 # Credits
-- Icon by [Fabian OvrWrt](https://github.com/FabianOvrWrt) with contributions from [The Eclectic Dyslexic](https://github.com/the-eclectic-dyslexic)
+- Icon by [Marco TLS](https://www.marcotls.eu)
 - [OpenBoard](https://github.com/openboard-team/openboard)
 - [AOSP Keyboard](https://android.googlesource.com/platform/packages/inputmethods/LatinIME/)
 - [LineageOS](https://review.lineageos.org/admin/repos/LineageOS/android_packages_inputmethods_LatinIME)
