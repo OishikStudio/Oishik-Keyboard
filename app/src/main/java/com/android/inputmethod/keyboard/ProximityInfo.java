@@ -7,14 +7,14 @@
 package com.android.inputmethod.keyboard;
 
 import android.graphics.Rect;
-import helium314.keyboard.latin.utils.Log;
+import oishik.keyboard.latin.utils.Log;
 
 import androidx.annotation.NonNull;
 
-import helium314.keyboard.keyboard.Key;
-import helium314.keyboard.keyboard.internal.TouchPositionCorrection;
-import helium314.keyboard.latin.common.Constants;
-import helium314.keyboard.latin.utils.JniUtils;
+import oishik.keyboard.keyboard.Key;
+import oishik.keyboard.keyboard.internal.TouchPositionCorrection;
+import oishik.keyboard.latin.common.Constants;
+import oishik.keyboard.latin.utils.JniUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

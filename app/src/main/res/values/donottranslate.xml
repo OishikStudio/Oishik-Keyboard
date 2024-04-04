@@ -62,7 +62,7 @@
 
 
     <!-- App slogan-->
-    <string name="app_slogan" translatable="false">100% FOSS keyboard, based on AOSP.</string>
+    <string name="app_slogan" translatable="false">Customizable and privacy-conscious open-source Oishik keyboard.</string>
     <!-- default value for auto-day/night setting -->
     <bool name="day_night_default">false</bool>
     <string-array name="language_switch_key_values">

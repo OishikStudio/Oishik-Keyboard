@@ -6,13 +6,13 @@
 
 package com.android.inputmethod.latin.utils;
 
-import helium314.keyboard.latin.utils.Log;
+import oishik.keyboard.latin.utils.Log;
 
-import helium314.keyboard.latin.NgramContext;
-import helium314.keyboard.latin.common.StringUtils;
-import helium314.keyboard.latin.define.DecoderSpecificConstants;
-import helium314.keyboard.latin.settings.SpacingAndPunctuations;
-import helium314.keyboard.latin.utils.DictionaryInfoUtils;
+import oishik.keyboard.latin.NgramContext;
+import oishik.keyboard.latin.common.StringUtils;
+import oishik.keyboard.latin.define.DecoderSpecificConstants;
+import oishik.keyboard.latin.settings.SpacingAndPunctuations;
+import oishik.keyboard.latin.utils.DictionaryInfoUtils;
 
 import java.util.ArrayList;
 import java.util.List;

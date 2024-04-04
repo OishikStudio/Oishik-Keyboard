@@ -18,12 +18,12 @@ def update_translations():
     url = "https://translate.codeberg.org/download/heliboard/?format=zip"
     zip_file_name = "translations.zip"
     urlretrieve(url, zip_file_name)
-    # extract all in heliboard/heliboard/app/src/main/res
+    # extract all in Oishik Keyboard/HeliBoard/app/src/main/res
     with zipfile.ZipFile(zip_file_name, "r") as f:
         for file in f.filelist:
-            if not file.filename.startswith("heliboard/heliboard/app/src/main/res"):
+            if not file.filename.startswith("oishik-keyboard/oishik-keyboard/app/src/main/res"):
                 continue
-            file.filename = file.filename.replace("heliboard/heliboard/", "")
+            file.filename = file.filename.replace("oishik-keyboard/oishik-keyboard/", "")
             f.extract(file)
     os.remove(zip_file_name)
 

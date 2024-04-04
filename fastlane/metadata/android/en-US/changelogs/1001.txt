@@ -4,7 +4,7 @@
 * improve behavior when language switch key is set to switch both language and keyboard
 * show links to existing dictionaries when adding a dictionary
 * add Kaitag layout by @alkaitagi (#519)
-* add Probhat layout by @fahimscirex (#489)
+* add Oishik layout by @fahimscirex (#489)
 * optionally reverse toolbar order for RTL languages by @codokie (#557, #574)
 * allow customizing special layouts (numpad, phone, ...)
   * still experimental, as the base layouts may change

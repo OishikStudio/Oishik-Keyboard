@@ -21,10 +21,10 @@
 
     <Preference
         android:title="@string/license"
-        android:summary="@string/gnu_gpl"
+        android:summary="@string/license_description"
         android:icon="@drawable/ic_settings_about_license">
         <intent android:action="android.intent.action.VIEW"
-            android:data="https://github.com/Helium314/HeliBoard/blob/main/LICENSE-GPL-3" />
+            android:data="https://github.com/OishikStudio/Oishik-Keyboard/blob/main/LICENSE" />
     </Preference>
 
     <Preference
@@ -39,7 +39,7 @@
         android:icon="@drawable/ic_settings_about_github">
         <intent
             android:action="android.intent.action.VIEW"
-            android:data="https://github.com/Helium314/HeliBoard" />
+            android:data="https://github.com/OishikStudio/Oishik-Keyboard" />
     </Preference>
 
     <Preference

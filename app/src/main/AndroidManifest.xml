@@ -14,7 +14,7 @@ SPDX-License-Identifier: Apache-2.0 AND GPL-3.0-only
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application android:label="@string/english_ime_name"
-            android:name="helium314.keyboard.latin.App"
+            android:name="oishik.keyboard.latin.App"
             android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
@@ -113,7 +113,7 @@ SPDX-License-Identifier: Apache-2.0 AND GPL-3.0-only
 
         <receiver android:name="DictionaryPackInstallBroadcastReceiver" android:exported="false">
             <intent-filter>
-                <action android:name="helium314.keyboard.dictionarypack.aosp.UNKNOWN_CLIENT" />
+                <action android:name="oishik.keyboard.dictionarypack.aosp.UNKNOWN_CLIENT" />
             </intent-filter>
         </receiver>
 
