@@ -1,5 +1,5 @@
-# HeliBoard
-HeliBoard is a privacy-conscious and customizable open-source keyboard, based on AOSP / OpenBoard.
+# Oishik Keyboard
+Oishik Keyboard is a privacy-conscious and customizable open-source keyboard with the Unijoy layout for Bengali, based on AOSP / OpenBoard.
 Does not use internet permission, and thus is 100% offline.
 
 ## Table of Contents
@@ -29,7 +29,7 @@ Does not use internet permission, and thus is 100% offline.
     <li>can follow the system's day/night setting on Android 10+ (and on some versions of Android 9)</li>
     <li>can follow dynamic colors for Android 12+</li>
   </ul>
-  <li>Customize keyboard <a href="https://github.com/Helium314/HeliBoard/blob/main/layouts.md">layouts</a> (only available when disabling <i>use system languages</i>)</li>
+  <li>Customize keyboard <a href="https://github.com/OishikStudio/Oishik-Keyboard/blob/main/layouts.md">layouts</a> (only available when disabling <i>use system languages</i>)</li>
   <li>Multilingual typing</li>
   <li>Glide typing (<i>only with closed source library</i> ☹️)</li>
   <ul>
@@ -44,7 +44,7 @@ Does not use internet permission, and thus is 100% offline.
 </ul>
 
 ## FAQ / Common Issues
-* __Add a dictionary__: First download the dictionary file, e.g. from [here](https://codeberg.org/Helium314/aosp-dictionaries#dictionaries). Then go to language settings, click on the language, then on `+` next to _dictionary_ the _add_ and select the file. Alternatively you can open a `.dict` file in a file explorer with HeliBoard and then select the language. Note that the latter method does not work with all file explorers.
+* __Add a dictionary__: First download the dictionary file, e.g. from [here](https://codeberg.org/Helium314/aosp-dictionaries#dictionaries). Then go to language settings, click on the language, then on `+` next to _dictionary_ the _add_ and select the file. Alternatively you can open a `.dict` file in a file explorer with Oishik Keyboard and then select the language. Note that the latter method does not work with all file explorers.
 * __Emoji search__: You can get addon dictionaries for emoji suggestions in the [dictionaries repo](https://codeberg.org/Helium314/aosp-dictionaries). An actual search function does not exist yet.
 * __Cannot switch choose layout__: This is only possible when _use system languages_ is disabled. You can select the layout when tapping on the language.
   * __How to customize layout__: Go to layout selection and use the `+` button, then you can add a custom layout, either from a file or you can copy and edit an existing layout.
@@ -54,7 +54,7 @@ Does not use internet permission, and thus is 100% offline.
 * __How to enable glide typing__: There is no glide typing built into this app, but you can load compatible libraries: Go to advanced settings -> _load gesture typing library_ and point to a file (setting not available in _nouserlib_ version). You can extract the file from GApps packages ("_swypelibs_"), or download one [here](https://github.com/erkserkserks/openboard/tree/master/app/src/main/jniLibs). Make sure to use the correct version (app will tell you in the dialog to load the library).
   * __Glide typing is not working after loading a library__: Possibly the download was corrupted, or you downloaded the wrong file. If you get a "_unknown file_" confirmation popup, it is likely you are not using the correct file (or you might be using a different version of the library). In rare cases, there might be crashes when the file is not in internal storage, or some [Samsung-specific problems](https://stackoverflow.com/a/75286899). 
 * __German layout with / without umlauts__: _German (Germany)_ layout has umlauts, _German_ layout doesn't
-* __Spell checker is not checking all languages in multilingual typing__: Make sure you actually enabled HeliBoard spell checker. Usually it can be found in System Settings -> System -> Languages -> Advanced -> Spell Checker, but this may depend on Android version.
+* __Spell checker is not checking all languages in multilingual typing__: Make sure you actually enabled Oishik Keyboard spell checker. Usually it can be found in System Settings -> System -> Languages -> Advanced -> Spell Checker, but this may depend on Android version.
 * __What is the _nouserlib_ version?__: The normal version (_release_) allows the user to provide a library for glide typing. Running code that isn't supplied with the app is _dynamic code loading_, which is a security risk. Android Studio warns about this:
   > Dynamically loading code from locations other than the application's library directory or the Android platform's built-in library directories is dangerous, as there is an increased risk that the code could have been tampered with. Applications should use loadLibrary when possible, which provides increased assurance that libraries are loaded from one of these safer locations. Application developers should use the features of their development environment to place application native libraries into the lib directory of their compiled APKs.
 
@@ -90,17 +90,14 @@ Features that may go unnoticed, and further potentially useful information
 
 ## Reporting Issues
 
-Whether you encountered a bug, or want to see a new feature in HeliBoard, you can contribute to the project by opening a new issue [here](https://github.com/Helium314/HeliBoard/issues). Your help is always welcome!
+Whether you encountered a bug, or want to see a new feature in Oishik Keyboard, you can contribute to the project by opening a new issue [here](https://github.com/OishikStudio/Oishik-Keyboard/issues). Your help is always welcome!
 
 Before opening a new issue, be sure to check the following:
- - **Does the issue already exist?** Make sure a similar issue has not been reported by browsing [existing issues](https://github.com/Helium314/HeliBoard/issues). Please search open and closed issues.
- - **Is the issue still relevant?** Make sure your issue is not already fixed in the latest version of HeliBoard.
+ - **Does the issue already exist?** Make sure a similar issue has not been reported by browsing [existing issues](https://github.com/OishikStudio/Oishik-Keyboard/issues). Please search open and closed issues.
+ - **Is the issue still relevant?** Make sure your issue is not already fixed in the latest version of Oishik Keyboard.
  - **Did you use the issue template?** It is important to make life of our kind contributors easier by avoiding issues that miss key information to their resolution.
 Note that issues that that ignore part of the issue template will likely get treated with very low priority, as often they are needlessly hard to read or understand (e.g. huge screenshots, not providing a proper description, or addressing multiple topics).
 
-## Translation
-Translations can be added using [Weblate](https://translate.codeberg.org/projects/heliboard/). You will need an account to update translations and add languages. Add the language you want to translate to in Languages -> Manage translated languages in the top menu bar.
-Updating translations in a PR will not be accepted, as it may cause conflicts with Weblate translations.
 
 ## Dictionary Creation
 There will not be any further dictionaries bundled in this app. However, you can add dictionaries to the [dictionaries repository](https://codeberg.org/Helium314/aosp-dictionaries).
@@ -110,14 +107,14 @@ To create or update a dictionary for your language, you can use [this tool](http
 
 ### Getting Started
 
-HeliBoard project is based on Gradle and Android Gradle Plugin. To get started, you can install [Android Studio](https://developer.android.com/studio), and import project 'from Version Control / Git / Github' by providing this git repository [URL](https://github.com/Helium314/HeliBoard) (or git SSH [URL](git@github.com:Helium314/heliboard.git)).
+Oishik Keyboard project is based on Gradle and Android Gradle Plugin. To get started, you can install [Android Studio](https://developer.android.com/studio), and import project 'from Version Control / Git / Github' by providing this git repository [URL](https://github.com/OishikStudio/Oishik-Keyboard) (or git SSH [URL](git@github.com:OishikStudio/Oishik-Keyboard.git)).
 Of course you can also use any other compatible IDE, or work with text editor and command line.
 
 Once everything is up correctly, you're ready to go!
 
 ### Guidelines
 
-HeliBoard is a complex application, when contributing, you must take a step back and make sure your contribution:
+Oishik Keyboard is a complex application, when contributing, you must take a step back and make sure your contribution:
 - **Is actually wanted**. Best check related open issues before you start working on a PR. Issues with "PR" and "contributor needed" labels are accepted, but still it would be good if you announced that you are working on it.
 If there is no issue related to your intended contribution, it's a good idea to open a new one to avoid disappointment of the contribution not being accepted. For small changes or fixing obvious bugs this step is not necessary.
 - **Is only about a single thing**. Mixing unrelated contributions into a single PR is hard to review and can get messy.
@@ -126,9 +123,9 @@ If there is no issue related to your intended contribution, it's a good idea to 
 - **Has a low footprint**. Some parts of the code are executed very frequently, and the keyboard should stay responsive even on older devices.
 - **Does not bring any non-free code or proprietary binary blobs**. This also applies to code/binaries with unknown licenses. Make sure you do not introduce any closed-source library from Google.
 If your contribution contains code that is not your own, provide a link to the source.
-- **Complies with the user privacy principle HeliBoard follows**. 
+- **Complies with the user privacy principle Oishik Keyboard follows**. 
 
-In addition to previous elements, HeliBoard must stick to [F-Droid inclusion guidelines](https://f-droid.org/docs/Inclusion_Policy/).
+In addition to previous elements, Oishik Keyboard must stick to [F-Droid inclusion guidelines](https://f-droid.org/docs/Inclusion_Policy/).
 
 ### Adding Layouts
 
@@ -162,7 +159,7 @@ __Planned features and improvements:__
   * With language-dependent TLDs
 * Internal cleanup (a lot of over-complicated and convoluted code)
 * (optionally?) move toolbar key pinning to a setting, so long press actions on unpinned toolbar keys are available
-* [Bug fixes](https://github.com/Helium314/HeliBoard/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+* [Bug fixes](https://github.com/OishikStudio/Oishik-Keyboard/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
 
 __What will _not_ be added:__
 * Material 3 (not worth adding 1.5 MB to app size)
@@ -171,7 +168,7 @@ __What will _not_ be added:__
 
 # License
 
-HeliBoard (as a fork of OpenBoard) is licensed under GNU General Public License v3.0.
+Oishik Keyboard (as a fork of OpenBoard) is licensed under GNU General Public License v3.0.
 
  > Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 
@@ -187,4 +184,4 @@ Since the app is based on Apache 2.0 licensed AOSP Keyboard, an [Apache 2.0](LIC
 - [Simple Keyboard](https://github.com/rkkr/simple-keyboard)
 - [Indic Keyboard](https://gitlab.com/indicproject/indic-keyboard)
 - [FlorisBoard](https://github.com/florisboard/florisboard/)
-- Our [contributors](https://github.com/Helium314/HeliBoard/graphs/contributors)
+- Our [contributors](https://github.com/OishikStudio/Oishik-Keyboard/graphs/contributors)
