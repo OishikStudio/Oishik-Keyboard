@@ -380,7 +380,7 @@ class LanguageSettingsDialog(
             } else {
                 popupKeyTypesDefault
             }
-            reorderPopupKeysDialog(context, Settings.PREF_POPUP_KEYS_ORDER + "_" + mainLocale.toLanguageTag(), popupKeyTypesDefaultBNBDSpecific, R.string.popup_order)
+            reorderDialog(context, Settings.PREF_POPUP_KEYS_ORDER + "_" + mainLocale.toLanguageTag(), popupKeyTypesDefaultBNBDSpecific, R.string.popup_order)
             KeyboardLayoutSet.onKeyboardThemeChanged()
         }
         binding.popupLabelPriority.setOnClickListener {
@@ -390,7 +390,7 @@ class LanguageSettingsDialog(
             } else {
                 popupKeyTypesDefault
             }
-            reorderPopupKeysDialog(context, Settings.PREF_POPUP_KEYS_LABELS_ORDER + "_" + mainLocale.toLanguageTag(), popupKeyTypesDefaultBNBDSpecific, R.string.hint_source)
+            reorderDialog(context, Settings.PREF_POPUP_KEYS_LABELS_ORDER + "_" + mainLocale.toLanguageTag(), popupKeyTypesDefaultBNBDSpecific, R.string.hint_source)
             KeyboardLayoutSet.onKeyboardThemeChanged()
         }
     }
