@@ -460,7 +460,7 @@ class AdvancedSettingsFragment : SubScreenFragment() {
             originalName.startsWith("layouts") -> {
                 // replace file name after switch to language tag, but only if it's not a layout
                 val localeString = originalName.substringAfter(".").substringBefore(".")
-                if (localeString in listOf(LAYOUT_SYMBOLS, LAYOUT_SYMBOLS_SHIFTED, LAYOUT_SYMBOLS_ARABIC, LAYOUT_NUMBER, LAYOUT_NUMPAD, LAYOUT_NUMPAD_LANDSCAPE, LAYOUT_PHONE, LAYOUT_PHONE_SYMBOLS))
+                if (localeString in listOf(LAYOUT_SYMBOLS, LAYOUT_SYMBOLS_SHIFTED, LAYOUT_NUMBER, LAYOUT_NUMPAD, LAYOUT_NUMPAD_LANDSCAPE, LAYOUT_PHONE, LAYOUT_PHONE_SYMBOLS))
                     return originalName // it's a layout!
                 val locale = localeString.constructLocale()
                 if (locale.toLanguageTag() != "und")
